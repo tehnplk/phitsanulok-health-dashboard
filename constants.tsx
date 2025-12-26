@@ -27,17 +27,17 @@ const getHospInfo = (id: string): HospitalMaster => {
 // ONE LR DATA
 // ----------------------------------------------------------------------
 
-export const LR_DATA: LRData[] = HOSPITAL_MASTER.map(h => ({
-  ...h,
-  hasPatients: Math.random() > 0.2,
-  status: {
-    waiting: Math.floor(Math.random() * 8),
-    normal: Math.floor(Math.random() * 4),
-    abnormal: Math.floor(Math.random() * 2),
-    miscarriage: Math.random() > 0.9 ? 1 : 0,
-    notDelivered: 0
-  }
-}));
+export const LR_DATA: LRData[] = [
+  { ...getHospInfo('1'), hasPatients: true, status: { waiting: 3, normal: 7, abnormal: 1, miscarriage: 0, notDelivered: 0 } },
+  { ...getHospInfo('2'), hasPatients: true, status: { waiting: 2, normal: 4, abnormal: 1, miscarriage: 0, notDelivered: 0 } },
+  { ...getHospInfo('3'), hasPatients: true, status: { waiting: 1, normal: 2, abnormal: 0, miscarriage: 0, notDelivered: 0 } },
+  { ...getHospInfo('4'), hasPatients: false, status: { waiting: 0, normal: 0, abnormal: 0, miscarriage: 0, notDelivered: 0 } },
+  { ...getHospInfo('5'), hasPatients: true, status: { waiting: 1, normal: 3, abnormal: 0, miscarriage: 0, notDelivered: 0 } },
+  { ...getHospInfo('6'), hasPatients: true, status: { waiting: 2, normal: 5, abnormal: 1, miscarriage: 0, notDelivered: 0 } },
+  { ...getHospInfo('7'), hasPatients: false, status: { waiting: 0, normal: 0, abnormal: 0, miscarriage: 0, notDelivered: 0 } },
+  { ...getHospInfo('8'), hasPatients: true, status: { waiting: 2, normal: 4, abnormal: 1, miscarriage: 0, notDelivered: 0 } },
+  { ...getHospInfo('9'), hasPatients: true, status: { waiting: 1, normal: 2, abnormal: 0, miscarriage: 0, notDelivered: 0 } }
+];
 
 // ----------------------------------------------------------------------
 // ONE ICU DATA (Realistic Capacity)
