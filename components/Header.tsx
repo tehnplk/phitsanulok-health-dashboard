@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Home, User, ChevronDown, LayoutDashboard, Stethoscope, Activity, BedDouble, Clock, HeartPulse, Users } from 'lucide-react';
+import { Menu, Home, ChevronDown, LayoutDashboard, Stethoscope, Activity, BedDouble, Clock, HeartPulse, Users } from 'lucide-react';
 import { ViewType } from '../types';
 
 interface HeaderProps {
@@ -136,11 +136,11 @@ export const Header: React.FC<HeaderProps> = ({ onMenuToggle, activeView }) => {
 
       <div className="flex items-center gap-2 md:gap-3 shrink-0">
         <div className="text-right hidden md:block">
-          <span className="block text-sm font-medium text-gray-600">Guest User</span>
+          <span className="block text-sm font-medium text-gray-600">Provider</span>
         </div>
         <div className="flex items-center gap-1 cursor-pointer hover:bg-gray-50 p-1 rounded-full transition-colors">
           <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-200 overflow-hidden border border-gray-300">
-             <img src="https://picsum.photos/100/100" alt="User" className="w-full h-full object-cover" />
+             <img src="/nurse.png" alt="Nurse avatar" className="w-full h-full object-cover" />
           </div>
           <ChevronDown className="w-4 h-4 text-gray-400" />
         </div>
