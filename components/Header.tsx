@@ -103,7 +103,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuToggle, activeView }) => {
           <Menu className="w-6 h-6" />
         </button>
 
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="hidden md:flex items-center gap-2 shrink-0">
           <img 
             src="/logo.png" 
             alt="Logo" 
@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuToggle, activeView }) => {
           </div>
         </div>
 
-        <div className="h-8 w-px bg-gray-200 mx-1 md:mx-2 shrink-0"></div>
+        <div className="hidden md:block h-8 w-px bg-gray-200 mx-1 md:mx-2 shrink-0"></div>
 
         <div className="flex items-center gap-3 overflow-hidden">
           <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 shrink-0">

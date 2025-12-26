@@ -52,8 +52,8 @@ const ICUCard: React.FC<{ data: ICUData }> = ({ data }) => {
             <thead>
               <tr className="bg-gray-50/50 text-gray-500 uppercase text-[10px] tracking-wider">
                 <th className="py-3 px-4 font-bold">ICU Ward</th>
-                <th className="py-3 px-2 font-bold text-center">ทั้งหมด</th>
-                <th className="py-3 px-2 font-bold text-center">ใช้งาน</th>
+                <th className="py-3 px-2 font-bold text-center">เตียง</th>
+                <th className="py-3 px-2 font-bold text-center">ครองเตียง</th>
                 <th className="py-3 px-2 font-bold text-center">ว่าง</th>
                 <th className="py-3 px-4 font-bold text-right">ร้อยละ</th>
               </tr>
