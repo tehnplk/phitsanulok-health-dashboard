@@ -56,11 +56,39 @@ export const ICU_DATA: ICUData[] = [
   },
   {
     ...getHospInfo('2'),
-    wards: [{ name: 'ICU รวม', totalBeds: 8, usedBeds: 5 }]
+    wards: [
+      { name: 'Semi ICU', totalBeds: 4, usedBeds: 0 }
+    ]
+  },
+  {
+    ...getHospInfo('3'),
+    wards: [{ name: 'Semi ICU', totalBeds: 4, usedBeds: 0 }]
+  },
+  {
+    ...getHospInfo('4'),
+    wards: [{ name: 'Semi ICU', totalBeds: 4, usedBeds: 0 }]
+  },
+  {
+    ...getHospInfo('5'),
+    wards: [{ name: 'Semi ICU', totalBeds: 4, usedBeds: 0 }]
+  },
+  {
+    ...getHospInfo('6'),
+    wards: [{ name: 'Semi ICU', totalBeds: 4, usedBeds: 0 }]
+  },
+  {
+    ...getHospInfo('7'),
+    wards: [{ name: 'Semi ICU', totalBeds: 4, usedBeds: 0 }]
   },
   {
     ...getHospInfo('8'),
-    wards: [{ name: 'ICU รวม', totalBeds: 10, usedBeds: 8 }]
+    wards: [
+      { name: 'Semi ICU', totalBeds: 4, usedBeds: 0 }
+    ]
+  },
+  {
+    ...getHospInfo('9'),
+    wards: [{ name: 'Semi ICU', totalBeds: 4, usedBeds: 0 }]
   }
 ];
 
