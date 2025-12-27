@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client"
+  output   = "./generated"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum HospitalSizeLevel {
+  S
+  A
+  M1
+  M2
+  F1
+  F2
+  F3
+  P
+}
+
+enum HospitalSapLevel {
+  S
+  S_PLUS
+  A
+  A_PLUS
+  P
+  P_PLUS
+}
+
+enum HospitalAffiliation {
+  MOPH
+  LAO
+  MOD
+  UNIVERSITY
+}
+
+model Hospital {
+  id           String             @id
+  name         String
+  code         String             @unique
+  sizeLevel    HospitalSizeLevel
+  sapLevel     HospitalSapLevel
+  affiliation  HospitalAffiliation
+  lat          Float?
+  lng          Float?
+  lrStatus     LrStatus?
+  orStat       OrStat?
+  icuWards     ICUWard[]
+  ipdWards     IPDWard[]
+  waitingTimes WaitingTime[]
+  visitCounts  VisitCount[]
+}
+
+model LrStatus {
+  id           String   @id @default(cuid())
+  hospitalId   String   @unique
+  waiting      Int
+  normal       Int
+  abnormal     Int
+  miscarriage  Int
+  notDelivered Int
+  hospital     Hospital @relation(fields: [hospitalId], references: [id])
+}
+
+model ICUWard {
+  id         String   @id @default(cuid())
+  hospitalId String
+  name       String
+  totalBeds  Int
+  usedBeds   Int
+  hospital   Hospital @relation(fields: [hospitalId], references: [id])
+
+  @@index([hospitalId])
+}
+
+model IPDWard {
+  id         String   @id @default(cuid())
+  hospitalId String
+  name       String
+  totalBeds  Int
+  usedBeds   Int
+  hospital   Hospital @relation(fields: [hospitalId], references: [id])
+
+  @@index([hospitalId])
+}
+
+model OrStat {
+  id              String   @id @default(cuid())
+  hospitalId      String   @unique
+  totalRooms      Int
+  activeSurgeries Int
+  scheduledToday  Int
+  emergencyCases  Int
+  availableRooms  Int
+  hospital        Hospital @relation(fields: [hospitalId], references: [id])
+}
+
+model WaitingTime {
+  id         String   @id @default(cuid())
+  hospitalId String
+  date       String
+  dayName    String
+  minutes    Int
+  hospital   Hospital @relation(fields: [hospitalId], references: [id])
+
+  @@index([hospitalId])
+}
+
+model VisitCount {
+  id         String   @id @default(cuid())
+  hospitalId String
+  date       String
+  dayName    String
+  count      Int
+  hospital   Hospital @relation(fields: [hospitalId], references: [id])
+
+  @@index([hospitalId])
+}

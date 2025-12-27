@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Prisma generated client
+src/prisma/generated/
+
+# Database
+database/
+
+# Next.js
+.next/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

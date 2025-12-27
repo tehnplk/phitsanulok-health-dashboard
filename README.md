@@ -2,19 +2,33 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Phitsanulok Health Dashboard (Next.js 16)
 
-This contains everything you need to run your app locally.
+Next.js 16 App Router build with Prisma + SQLite, Tailwind CSS, server actions, and Leaflet maps.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1SmbEk5-EFsTZhvpRdww8RZ99GYNohfTw
+## Prerequisites
 
-## Run Locally
+- Node.js 18+ (Tested with 22.x)
 
-**Prerequisites:**  Node.js
+## Quickstart
 
+1) Install dependencies
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm install
+```
+
+2) Generate the SQLite schema and seed sample data
+
+```bash
+npm run prisma:db:push
+npm run prisma:seed
+```
+
+3) Start the dev server
+
+```bash
+npm run dev
+```
+
+The app will be available at http://localhost:3000.
